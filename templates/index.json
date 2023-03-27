@@ -12,8 +12,8 @@
     "featured": {
       "type": "feature-product",
       "settings": {
-        "featured_header": "",
-        "featured_description": ""
+        "featured_header": "Feature Products",
+        "featured_description": "See our own collectibles"
       }
     }
   },
