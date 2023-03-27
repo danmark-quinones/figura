@@ -11,6 +11,18 @@
     },
     "featured": {
       "type": "feature-product",
+      "blocks": {
+        "ef7dbc9b-eda7-4650-b8ed-d38f2764d9e0": {
+          "type": "collection",
+          "settings": {
+            "featured_collection": "featured-products",
+            "show_price": false
+          }
+        }
+      },
+      "block_order": [
+        "ef7dbc9b-eda7-4650-b8ed-d38f2764d9e0"
+      ],
       "settings": {
         "featured_header": "Feature Products",
         "featured_description": "See our own collectibles"
