@@ -1,0 +1,47 @@
+<div>
+  {% if section.settings.hero_image != blank %}
+    <img
+      loading="lazy"
+      src="{{section.settings.hero_image | img_url: 'large'}}"
+      alt="hero"
+      width="500"
+      height="200" />
+  {% endif %}
+  {% if section.settings.header_text != blank %}
+    <div>
+      <p>{{ section.settings.header_text }}</p>
+    </div>
+  {% endif %}
+  {% if section.settings.sub_header != blank %}
+    <div>
+      <p>{{ section.settings.sub_header }}</p>
+    </div>
+  {% endif %}
+</div>
+
+
+{% schema %}
+  {
+    "name": "Hero Banner",
+    "presets": [
+      {
+        "name": "⚡Hero Banner"
+      }
+    ],
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "hero_image",
+        "label": "Hero Image"
+      }, {
+        "type": "text",
+        "id": "header_text",
+        "label": "Header Text"
+      }, {
+        "type": "text",
+        "id": "sub_header",
+        "label": "Sub Header"
+      }
+    ]
+  }
+{% endschema %}

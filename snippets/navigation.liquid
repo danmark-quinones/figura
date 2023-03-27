@@ -1,0 +1,34 @@
+<div class="relative bg-red">
+  <div class="p-10 bg-blue-500 sm:px-6">
+    <div class="flex justify-between items-center">
+
+      {% if data.shop_name != blank %}
+        <p>{{ data.shop_name }}</p>
+      {% endif %}
+
+      <nav class="flex justify-between items-center">
+        <div class="mx-5 text-white hover:text-black">
+          <a href="/">Home</a>
+        </div>
+        <div class="mx-5 text-white hover:text-black">
+          <a href="/catalog">Catalog</a>
+        </div>
+        <div class="mx-5 text-white hover:text-black">
+          <a href="/contact">Contact</a>
+        </div>
+      </nav>
+
+      <div class="flex justify-between  items-center">
+        <div class="mx-5 text-white hover:text-black">
+          <a href="/cart">Cart</a>
+        </div>
+        <div class="mx-5 text-white hover:text-black">
+          <a href="#">Login</a>
+        </div>
+        <div class="mx-5 text-white hover:text-black">
+          <a href="#">Register</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
