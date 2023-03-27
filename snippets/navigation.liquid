@@ -1,31 +1,35 @@
-<div class="relative bg-red">
-  <div class="p-10 bg-blue-500 sm:px-6">
+{{ 'navigation.css' | asset_url | stylesheet_tag }}
+
+<div class="relative navigation-container">
+  <div>
     <div class="flex justify-between items-center">
 
       {% if data.shop_name != blank %}
-        <p>{{ data.shop_name }}</p>
+        <p class="navigation-logo">{{ data.shop_name }}</p>
+      {% else %}
+        <p class="navigation-logo">SHOP NAME</p>
       {% endif %}
 
       <nav class="flex justify-between items-center">
-        <div class="mx-5 text-white hover:text-black">
+        <div class="mx-5 text-blue hover:text-black">
           <a href="/">Home</a>
         </div>
-        <div class="mx-5 text-white hover:text-black">
+        <div class="mx-5 text-blue hover:text-black">
           <a href="/catalog">Catalog</a>
         </div>
-        <div class="mx-5 text-white hover:text-black">
+        <div class="mx-5 text-blue hover:text-black">
           <a href="/contact">Contact</a>
         </div>
       </nav>
 
       <div class="flex justify-between  items-center">
-        <div class="mx-5 text-white hover:text-black">
+        <div class="mx-5 text-blue hover:text-black">
           <a href="/cart">Cart</a>
         </div>
-        <div class="mx-5 text-white hover:text-black">
+        <div class="mx-5 text-blue hover:text-black">
           <a href="#">Login</a>
         </div>
-        <div class="mx-5 text-white hover:text-black">
+        <div class="mx-5 text-blue hover:text-black">
           <a href="#">Register</a>
         </div>
       </div>

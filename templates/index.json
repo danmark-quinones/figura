@@ -2,9 +2,14 @@
   "sections": {
     "main": {
       "type": "hero-banner"
+    },
+    "featured":{
+      "type": "feature-product",
+      "name":"Featured Product"
     }
   },
   "order": [
-    "main"
+    "main",
+    "featured"
   ]
 }

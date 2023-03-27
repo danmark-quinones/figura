@@ -1,0 +1,78 @@
+{{ 'home.css' | asset_url | stylesheet_tag }}
+
+<div class="featured-product-container">
+  {% if section.settings.featured_header != blank %}
+    <p class="red-text">{{ section.settings.featured_header }}</p>
+  {% endif %}
+
+  {% if section.settings.featured_description != blank %}
+    <p class="red-text">{{ section.settings.featured_description }}</p>
+  {% endif %}
+
+  {% for block in section.blocks %}
+    {% comment %} <p>{{ block.settings.featured_collection.title }}</p> {% endcomment %}
+    {%- case block.type -%}
+      {% when 'collection' %}
+      <div class="grid grid-rows-1 grid-flow-col gap-4">
+        {% for product in block.settings.featured_collection.products %}
+          <div class="product-card-container">
+            <div class="product-card-img-container">
+              <img src="{{product.featured_image | img_url:'300x300'}}" />
+            </div>
+            <p>{{ product.title }}</p>
+            <p>{{ product.price }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    {%- endcase -%}
+  {% endfor %}
+</div>
+
+<script>
+  console.log("product", block.settings.featured_collection.products)
+</script>
+
+{% schema %}
+  {
+    "name": "Featured Collection",
+    "settings": [
+      {
+        "type": "text",
+        "id": "featured_header",
+        "label": "⚡Featured Header Text"
+      }, {
+        "type": "text",
+        "id": "featured_description",
+        "label": "⚡Featured Description Text"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "limit": 4,
+        "name": "⚡Collection",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "featured_collection",
+            "label": "⚡Featured Collection"
+          }, {
+            "type": "checkbox",
+            "id": "show_price",
+            "label": "Show Price"
+          }
+        ]
+      }, {
+        "type": "Sample",
+        "name": "Sample",
+        "settings": [
+          {
+            "type": "text",
+            "id": "sample",
+            "label": "sample"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

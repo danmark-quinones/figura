@@ -1,23 +1,52 @@
-<div>
-  {% if section.settings.hero_image != blank %}
-    <img
-      loading="lazy"
-      src="{{section.settings.hero_image | img_url: 'large'}}"
-      alt="hero"
-      width="500"
-      height="200" />
-  {% endif %}
-  {% if section.settings.header_text != blank %}
-    <div>
-      <p>{{ section.settings.header_text }}</p>
+{{ 'home.css' | asset_url | stylesheet_tag }}
+
+<div class="relative flex justify-between items-start overflow-hidden banner-container">
+
+  <div class="hero-banner-content">
+
+    <div class="hero-banner-header">
+      {% if section.settings.header_text != blank %}
+        <p>{{ section.settings.header_text }}</p>
+      {% else %}
+        <p>SHOP NAME HERE</p>
+      {% endif %}
     </div>
-  {% endif %}
-  {% if section.settings.sub_header != blank %}
-    <div>
-      <p>{{ section.settings.sub_header }}</p>
+
+    <div class="hero-banner-sub-header">
+      {% if section.settings.sub_header != blank %}
+        <p>{{ section.settings.sub_header }}</p>
+      {% else %}
+        <p>SHOP NAME DESCRIPION HERE</p>
+      {% endif %}
     </div>
-  {% endif %}
+
+    <button class="hero-banner-button">
+      Collect Now!
+    </button>
+  </div>
+
+
+  <div class="hero-banner-image-container">
+    {% if section.settings.hero_image != blank %}
+      <img
+        loading="lazy"
+        src="{{section.settings.hero_image | img_url: '700x800'}}"
+        alt="hero" />
+    {% else %}
+      {{ 'product-1' | placeholder_svg_tag }}
+    {% endif %}
+  </div>
+
+
+
 </div>
+
+{% if section.settings.announcement != blank %}
+  <div class="hero-banner-announcement">
+    <marquee>{{ section.settings.announcement }}</marquee>
+  </div>
+{% endif %}
+
 
 
 {% schema %}
@@ -41,6 +70,10 @@
         "type": "text",
         "id": "sub_header",
         "label": "Sub Header"
+      }, {
+        "type": "text",
+        "id": "announcement",
+        "label": "Announcement"
       }
     ]
   }
