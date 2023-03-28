@@ -18,14 +18,23 @@
     {{ content_for_header }}
 
     {{ 'application.css' | asset_url | stylesheet_tag }}
-    {% comment %} {{ 'application.js' | asset_url | script_tag }} {% endcomment %}
+    {{ 'main.css' | asset_url | stylesheet_tag }}
+    <script src="{{'application.js'|asset_url}}" defer="defer"></script>
 
   </head>
 
-  <body>
+  <body class="main-container">
+
     {% section 'header' %}
 
+
+
     <main role="main">
+
+      <div id="mobile-menu" class="mobile-menu">
+        {% render 'mobile-menu' %}
+      </div>
+
       {{ content_for_layout }}
     </main>
 

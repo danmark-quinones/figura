@@ -513,8 +513,20 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .relative {
   position: relative;
+}
+
+.right-0 {
+  right: 0px;
+}
+
+.m-3 {
+  margin: 0.75rem;
 }
 
 .mx-5 {
@@ -595,6 +607,10 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:hidden {
+    display: none;
+  }
+
   .sm\:grid-rows-4 {
     grid-template-rows: repeat(4, minmax(0, 1fr));
   }

@@ -102,3 +102,19 @@
 .collection-title:hover{
     text-decoration: underline;
 }
+
+@media (max-width: 500px) {
+    .hero-banner-content{
+        padding: 10px 0px 10px 20px;
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 2;
+    }
+    .hero-banner-image-container{
+        padding-right: 0px;
+        position: absolute;
+    }
+    .hero-banner-sub-header{
+        color: #fff;
+    }
+}

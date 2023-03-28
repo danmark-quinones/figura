@@ -10,7 +10,7 @@
         <p class="navigation-logo">SHOP NAME</p>
       {% endif %}
 
-      <nav class="flex justify-between items-center">
+      <nav class="flex justify-between items-center lg-link">
 
         {% for link in linklists.main-menu.links %}
           <div class="mx-5 text-blue hover:text-black">
@@ -20,15 +20,19 @@
       </nav>
 
       <div class="flex justify-between  items-center">
-        <div class="mx-5 text-blue hover:text-black">
-          <a href="{{routes.cart_url}}">Cart({{ cart.item_count }})</a>
+        <div class="mx-5 text-blue hover:text-black cart-icon-container">
+          <a href="{{routes.cart_url}}">
+            {% render 'icon-cart' %}
+          </a>
+          {% if cart.item_count > 0 %}
+            <div class="cart-count-container">
+              <span>{{ cart.item_count }}</span>
+            </div>
+          {% endif %}
         </div>
-        {% comment %} <div class="mx-5 text-blue hover:text-black">
-        <a href="#">Login</a>
+        <div class="menu-icon" id="open-menu">
+          {% render 'icon-unfold-menu' %}
         </div>
-        <div class="mx-5 text-blue hover:text-black">
-        <a href="#">Register</a>
-        </div> {% endcomment %}
       </div>
     </div>
   </div>

@@ -1,0 +1,26 @@
+.main-container{
+    overflow-x: hidden !important;
+    position: relative;
+}
+.main{
+    position: relative;
+    overflow: hidden;
+}
+
+.mobile-menu{
+    background-color: #fff;
+    position: absolute;
+    overflow: hidden;
+    top: 0%;
+    right: 0%;
+    width: 0%;
+    height: 100vh;
+    transition: 0.3s;
+    z-index: 10;
+}
+.mobile-menu.hide{
+    width: 0%;
+}
+.mobile-menu.show{
+    width: 100%;
+}
