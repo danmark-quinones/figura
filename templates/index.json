@@ -59,11 +59,19 @@
         "collection_header": "Our Collections",
         "collection_description": "See all our available collectibles!"
       }
+    },
+    "379d1a4c-7fb9-4d89-8e1f-44a04e39402e": {
+      "type": "feature-product",
+      "settings": {
+        "featured_header": "New Figures",
+        "featured_description": "Jampack New Release Figures"
+      }
     }
   },
   "order": [
     "main",
     "featured",
-    "9ed51085-6aeb-4a6f-afcf-86a6a051b156"
+    "9ed51085-6aeb-4a6f-afcf-86a6a051b156",
+    "379d1a4c-7fb9-4d89-8e1f-44a04e39402e"
   ]
 }
