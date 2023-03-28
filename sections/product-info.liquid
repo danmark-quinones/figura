@@ -1,0 +1,27 @@
+<div>
+  <p>HELLO</p>
+  <h3>{{ product.title }}</h3>
+  <form
+    method="POST"
+    action="/cart/add"
+    novalidate>
+    <input
+      type="hidden"
+      name="id"
+      value="{{ product.variants.first.id }}" />
+    <input
+      min="1"
+      type="number"
+      id="quantity"
+      name="quantity"
+      value="1" />
+    <input
+      type="hidden"
+      name="return_to"
+      value="back" />
+    <input
+      type="submit"
+      value="Add to cart"
+      class="btn" />
+  </form>
+</div>

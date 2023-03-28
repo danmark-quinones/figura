@@ -1,0 +1,47 @@
+<div>
+  My CART
+  {% if cart.empty? %}
+    <p>You do not have items in cart</p>
+  {% else %}
+    <form
+      action="{{routes.cart_url}}"
+      method="POST"
+      novalidate>
+      <p>Cart Item : {{ cart.item_count }}</p>
+      <div>
+        {% for item in cart.items %}
+          <p>{{ item.title }}</p>
+          <a href="{{routes.cart_change_url}}?line={{forloop.index}}&quantity=0">Remove</a>
+          <div>
+            <input
+              type="number"
+              name="updates[]"
+              value="{{ item.quantity }}"
+              min="1"
+              id="updates_{{forloop.index}}" />
+          </div>
+          <div>
+            {{ item.line_price | money }}
+          </div>
+        {% endfor %}
+
+        <div>
+          <div>
+            <p>Subtotal : {{ cart.total_price | money }}</p>
+          </div>
+          <div>
+            <button name="update" type="submit">
+              Update
+            </button>
+          </div>
+          <div>
+            <button name="checkout" type="submit">
+              Checkout
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  {% endif %}
+
+</div>

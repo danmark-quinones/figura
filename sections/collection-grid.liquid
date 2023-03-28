@@ -1,0 +1,62 @@
+{{ 'home.css' | asset_url | stylesheet_tag }}
+
+<div class="relative collection-container">
+  {% if section.settings.collection_header != blank %}
+    <p class="section-header">{{ section.settings.collection_header }}</p>
+  {% endif %}
+
+  {% if section.settings.collection_description != blank %}
+    <p class="section-description">{{ section.settings.collection_description }}</p>
+  {% endif %}
+  <div class="grid-flow-col gap-4 grid grid-rows-1">
+    {% for block in section.blocks %}
+      {%- case block.type -%}
+        {% when 'collection' %}
+        <a href="{{block.settings.featured_collection.url}}">
+          <div class="collection-card-container">
+            <div class="collection-card-img-container">
+              <img src="{{block.settings.featured_collection.featured_image | img_url:'300x300'}}" />
+            </div>
+            <p class="text-center my-5 collection-title">{{ block.settings.featured_collection.title }} ({{ block.settings.featured_collection.products_count }})</p>
+          </div>
+        </a>
+      {%- endcase -%}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Featured Collection",
+    "presets": [
+      {
+        "name": "⚡Featured Collection"
+      }
+    ],
+    "settings": [
+      {
+        "type": "text",
+        "id": "collection_header",
+        "label": "⚡Collection Header Text"
+      }, {
+        "type": "text",
+        "id": "collection_description",
+        "label": "⚡Collection Description Text"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "limit": 6,
+        "name": "⚡Collection",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "featured_collection",
+            "label": "⚡Featured Collection"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

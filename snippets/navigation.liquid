@@ -11,27 +11,24 @@
       {% endif %}
 
       <nav class="flex justify-between items-center">
-        <div class="mx-5 text-blue hover:text-black">
-          <a href="/">Home</a>
-        </div>
-        <div class="mx-5 text-blue hover:text-black">
-          <a href="/catalog">Catalog</a>
-        </div>
-        <div class="mx-5 text-blue hover:text-black">
-          <a href="/contact">Contact</a>
-        </div>
+
+        {% for link in linklists.main-menu.links %}
+          <div class="mx-5 text-blue hover:text-black">
+            <a href="{{link.url}}">{{ link.title }}</a>
+          </div>
+        {% endfor %}
       </nav>
 
       <div class="flex justify-between  items-center">
         <div class="mx-5 text-blue hover:text-black">
-          <a href="/cart">Cart</a>
+          <a href="{{routes.cart_url}}">Cart({{ cart.item_count }})</a>
+        </div>
+        {% comment %} <div class="mx-5 text-blue hover:text-black">
+        <a href="#">Login</a>
         </div>
         <div class="mx-5 text-blue hover:text-black">
-          <a href="#">Login</a>
-        </div>
-        <div class="mx-5 text-blue hover:text-black">
-          <a href="#">Register</a>
-        </div>
+        <a href="#">Register</a>
+        </div> {% endcomment %}
       </div>
     </div>
   </div>

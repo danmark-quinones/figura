@@ -3,7 +3,7 @@
     background-color: #f9f9f9;
 }
 .hero-banner-content{
-    padding: 10px 0px 10px 100px;
+    padding: 10px 0px 10px 200px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -20,7 +20,7 @@
     margin: 10px 0px;
 }
 .hero-banner-image-container{
-    padding-right: 100px;
+    padding-right: 200px;
 }
 
 .hero-banner-button{
@@ -44,7 +44,7 @@
 }
 
 .featured-product-container{
-    padding: 20px 100px;
+    padding: 20px 200px;
 }
 .product-card-container{
     width: 200px;
@@ -56,4 +56,49 @@
 .product-card-img-container{
     height: 200px;
     overflow: hidden;
+}
+.product-card-img-container > img{
+    height: 200px;
+    width: 100%;
+}
+.collection-container{
+    padding: 20px 200px;
+}
+.section-header{
+    color: goldenrod;
+    font-size: 24px;
+    font-weight: 500;
+}
+.section-description{
+    color: gray;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.collection-list-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.collection-card-container{
+    background-color: #f2f2f2;
+    box-shadow: 2px 2px 5px #c4c4c4;
+    border-radius: 10px;
+    padding-bottom: 5px;
+    overflow: hidden;
+}
+.collection-card-img-container{
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+}
+.collection-card-img-container > img{
+    height: auto;
+    width: 100%;
+}
+.collection-title{
+    color: goldenrod;
+    font-weight: 400;
+}
+.collection-title:hover{
+    text-decoration: underline;
 }

@@ -2,28 +2,33 @@
 
 <div class="featured-product-container">
   {% if section.settings.featured_header != blank %}
-    <p class="red-text">{{ section.settings.featured_header }}</p>
+    <p class="section-header">{{ section.settings.featured_header }}</p>
   {% endif %}
 
   {% if section.settings.featured_description != blank %}
-    <p class="red-text">{{ section.settings.featured_description }}</p>
+    <p class="section-description">{{ section.settings.featured_description }}</p>
   {% endif %}
 
   {% for block in section.blocks %}
     {% comment %} <p>{{ block.settings.featured_collection.title }}</p> {% endcomment %}
+
     {%- case block.type -%}
+
       {% when 'collection' %}
       <div class="grid grid-rows-1 grid-flow-col gap-4">
-        {% for product in block.settings.featured_collection.products %}
-          <div class="product-card-container">
-            <div class="product-card-img-container">
-              <img src="{{product.featured_image | img_url:'300x300'}}" />
+        {% for product in block.settings.featured_product.products %}
+          <a href="{{product.url}}">
+            <div class="product-card-container">
+              <div class="product-card-img-container">
+                <img src="{{product.featured_image | img_url:'300x300'}}" />
+              </div>
+              <p class="product-card-title">{{ product.title | truncate: 45 }}</p>
+              <p class="product-card-price">{{ product.price | money }}</p>
             </div>
-            <p>{{ product.title }}</p>
-            <p>{{ product.price }}</p>
-          </div>
+          </a>
         {% endfor %}
       </div>
+
     {%- endcase -%}
   {% endfor %}
 </div>
@@ -34,7 +39,12 @@
 
 {% schema %}
   {
-    "name": "Featured Collection",
+    "name": "Featured Product",
+    "presets": [
+      {
+        "name": "⚡Featured Product"
+      }
+    ],
     "settings": [
       {
         "type": "text",
@@ -49,27 +59,17 @@
     "blocks": [
       {
         "type": "collection",
-        "limit": 4,
-        "name": "⚡Collection",
+        "limit": 5,
+        "name": "⚡Product",
         "settings": [
           {
             "type": "collection",
-            "id": "featured_collection",
-            "label": "⚡Featured Collection"
+            "id": "featured_product",
+            "label": "⚡Featured Product"
           }, {
             "type": "checkbox",
             "id": "show_price",
             "label": "Show Price"
-          }
-        ]
-      }, {
-        "type": "Sample",
-        "name": "Sample",
-        "settings": [
-          {
-            "type": "text",
-            "id": "sample",
-            "label": "sample"
           }
         ]
       }

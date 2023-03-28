@@ -1,8 +1,13 @@
 .navigation-container{
-    padding: 30px 100px;
+    padding: 30px 200px;
 }
 .navigation-logo{
     color:goldenrod;
     font-weight: 800;
     font-size: 30px;
+}
+.footer-container{
+    background-color: goldenrod;
+    color: #fff;
+    text-align: center;
 }
