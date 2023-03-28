@@ -15,7 +15,7 @@
     {%- case block.type -%}
 
       {% when 'collection' %}
-      <div class="grid grid-rows-1 grid-flow-col gap-4">
+      <div class="grid grid-rows-1 grid-flow-col gap-4 fp-list-container">
         {% for product in block.settings.featured_product.products %}
           <a href="{{product.url}}">
             <div class="product-card-container">

@@ -117,4 +117,18 @@
     .hero-banner-sub-header{
         color: #fff;
     }
+    .featured-product-container,
+    .collection-container{
+        padding: 20px;
+    }
+    .fp-list-container{
+        width: 100%;
+        overflow-x: auto;
+    }
+    .collection-list-container{
+        display: block;
+    }
+    .collection-card-container{
+        margin: 10px 0px;
+    }
 }
