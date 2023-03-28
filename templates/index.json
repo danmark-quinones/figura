@@ -30,6 +30,31 @@
     },
     "9ed51085-6aeb-4a6f-afcf-86a6a051b156": {
       "type": "collection-grid",
+      "blocks": {
+        "d65f57ff-2bfc-4b5d-9889-d16f4e0e0209": {
+          "type": "collection",
+          "settings": {
+            "featured_collection": "demon-slayer"
+          }
+        },
+        "75a124a1-ce07-43d5-93d1-3c523b32c562": {
+          "type": "collection",
+          "settings": {
+            "featured_collection": "naruto"
+          }
+        },
+        "1fc872d3-82f4-41de-9d64-e23b3a7db899": {
+          "type": "collection",
+          "settings": {
+            "featured_collection": "one-piece"
+          }
+        }
+      },
+      "block_order": [
+        "d65f57ff-2bfc-4b5d-9889-d16f4e0e0209",
+        "75a124a1-ce07-43d5-93d1-3c523b32c562",
+        "1fc872d3-82f4-41de-9d64-e23b3a7db899"
+      ],
       "settings": {
         "collection_header": "Our Collections",
         "collection_description": "See all our available collectibles!"
