@@ -62,6 +62,18 @@
     },
     "379d1a4c-7fb9-4d89-8e1f-44a04e39402e": {
       "type": "feature-product",
+      "blocks": {
+        "7ebc4cbd-1741-4f7f-aeaf-34064dda3717": {
+          "type": "collection",
+          "settings": {
+            "featured_product": "featured-products",
+            "show_price": false
+          }
+        }
+      },
+      "block_order": [
+        "7ebc4cbd-1741-4f7f-aeaf-34064dda3717"
+      ],
       "settings": {
         "featured_header": "New Figures",
         "featured_description": "Jampack New Release Figures"
