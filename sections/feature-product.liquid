@@ -10,22 +10,12 @@
   {% endif %}
 
   {% for block in section.blocks %}
-    {% comment %} <p>{{ block.settings.featured_collection.title }}</p> {% endcomment %}
-
     {%- case block.type -%}
 
       {% when 'collection' %}
       <div class="grid grid-rows-1 grid-flow-col gap-4 fp-list-container">
         {% for product in block.settings.featured_product.products %}
-          <a href="{{product.url}}">
-            <div class="product-card-container">
-              <div class="product-card-img-container">
-                <img src="{{product.featured_image | img_url:'300x300'}}" />
-              </div>
-              <p class="product-card-title">{{ product.title | truncate: 45 }}</p>
-              <p class="product-card-price">{{ product.price | money }}</p>
-            </div>
-          </a>
+          {% render 'product-card', product: product, show_buttons: false %}
         {% endfor %}
       </div>
 

@@ -1,5 +1,8 @@
 <div>
-  {% for product in collection.products %}
-    <p>{{ product.title }}</p>
-  {% endfor %}
+  <p>{{ collection.title }} Collections</p>
+  <div>
+    {% for product in collection.products %}
+      {% render 'product-card', product: product, show_buttons: true %}
+    {% endfor %}
+  </div>
 </div>

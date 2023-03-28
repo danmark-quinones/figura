@@ -46,21 +46,7 @@
 .featured-product-container{
     padding: 20px 200px;
 }
-.product-card-container{
-    width: 200px;
-    height: auto;
-    background-color: #f2f2f2;
-    padding: 10px;
-    border-radius: 5px;
-}
-.product-card-img-container{
-    height: 200px;
-    overflow: hidden;
-}
-.product-card-img-container > img{
-    height: 200px;
-    width: 100%;
-}
+
 .collection-container{
     padding: 20px 200px;
 }
