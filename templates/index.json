@@ -15,7 +15,7 @@
         "ef7dbc9b-eda7-4650-b8ed-d38f2764d9e0": {
           "type": "collection",
           "settings": {
-            "featured_collection": "featured-products",
+            "featured_product": "featured-products",
             "show_price": false
           }
         }
@@ -27,10 +27,18 @@
         "featured_header": "Feature Products",
         "featured_description": "See our own collectibles"
       }
+    },
+    "9ed51085-6aeb-4a6f-afcf-86a6a051b156": {
+      "type": "collection-grid",
+      "settings": {
+        "collection_header": "Our Collections",
+        "collection_description": "See all our available collectibles!"
+      }
     }
   },
   "order": [
     "main",
-    "featured"
+    "featured",
+    "9ed51085-6aeb-4a6f-afcf-86a6a051b156"
   ]
 }
