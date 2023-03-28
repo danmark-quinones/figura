@@ -15,7 +15,7 @@
         "ef7dbc9b-eda7-4650-b8ed-d38f2764d9e0": {
           "type": "collection",
           "settings": {
-            "featured_collection": "featured-products",
+            "featured_product": "featured-products",
             "show_price": false
           }
         }
@@ -24,13 +24,66 @@
         "ef7dbc9b-eda7-4650-b8ed-d38f2764d9e0"
       ],
       "settings": {
-        "featured_header": "Feature Products",
-        "featured_description": "See our own collectibles"
+        "featured_header": "Hot Deals",
+        "featured_description": "ATSUI ACTION FIGURES!!"
+      }
+    },
+    "9ed51085-6aeb-4a6f-afcf-86a6a051b156": {
+      "type": "collection-grid",
+      "blocks": {
+        "d65f57ff-2bfc-4b5d-9889-d16f4e0e0209": {
+          "type": "collection",
+          "settings": {
+            "featured_collection": "demon-slayer"
+          }
+        },
+        "75a124a1-ce07-43d5-93d1-3c523b32c562": {
+          "type": "collection",
+          "settings": {
+            "featured_collection": "naruto"
+          }
+        },
+        "1fc872d3-82f4-41de-9d64-e23b3a7db899": {
+          "type": "collection",
+          "settings": {
+            "featured_collection": "one-piece"
+          }
+        }
+      },
+      "block_order": [
+        "d65f57ff-2bfc-4b5d-9889-d16f4e0e0209",
+        "75a124a1-ce07-43d5-93d1-3c523b32c562",
+        "1fc872d3-82f4-41de-9d64-e23b3a7db899"
+      ],
+      "settings": {
+        "collection_header": "Our Collections",
+        "collection_description": "See all our available collectibles!"
+      }
+    },
+    "379d1a4c-7fb9-4d89-8e1f-44a04e39402e": {
+      "type": "feature-product",
+      "blocks": {
+        "7ebc4cbd-1741-4f7f-aeaf-34064dda3717": {
+          "type": "collection",
+          "settings": {
+            "featured_product": "featured-products",
+            "show_price": false
+          }
+        }
+      },
+      "block_order": [
+        "7ebc4cbd-1741-4f7f-aeaf-34064dda3717"
+      ],
+      "settings": {
+        "featured_header": "New Figures",
+        "featured_description": "Jampack New Release Figures"
       }
     }
   },
   "order": [
     "main",
-    "featured"
+    "featured",
+    "9ed51085-6aeb-4a6f-afcf-86a6a051b156",
+    "379d1a4c-7fb9-4d89-8e1f-44a04e39402e"
   ]
 }
