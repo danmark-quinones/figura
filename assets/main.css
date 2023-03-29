@@ -24,3 +24,18 @@
 .mobile-menu.show{
     width: 100%;
 }
+.primary-btn{
+    background-color: #2f2f2f;
+}
+.secondary-btn{
+    background-color: goldenrod;
+}
+.danger-btn{
+    background-color: tomato;
+}
+.cancel-btn{
+    background-color: lightgray;
+}
+.collection-title{
+    background-color: rgba(0, 0, 0, 0.5);
+}

@@ -4,7 +4,9 @@
     height: auto;
 }
 .navigation-logo{
-    color:goldenrod;
+    background: -webkit-linear-gradient(bottom right, #f2f2f2 0.5%,yellow, gold 40%, goldenrod);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-weight: 800;
     font-size: 30px;
 }

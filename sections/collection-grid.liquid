@@ -12,17 +12,14 @@
     {% for block in section.blocks %}
       {%- case block.type -%}
         {% when 'collection' %}
-        <a href="{{block.settings.featured_collection.url}}">
-          <div class="collection-card-container">
-            <div class="collection-card-img-container">
-              <img src="{{block.settings.featured_collection.featured_image | img_url:'300x300'}}" />
-            </div>
-            <p class="text-center my-5 collection-title">{{ block.settings.featured_collection.title }} ({{ block.settings.featured_collection.products_count }})</p>
-          </div>
-        </a>
+        {% render 'collection-card', collection: block.settings.featured_collection %}
       {%- endcase -%}
     {% endfor %}
   </div>
+
+  <p class="text-center mt-5">
+    <a href="/collections">See All Collections</a>
+  </p>
 </div>
 
 {% schema %}

@@ -1,6 +1,6 @@
-<div>
-  <p>{{ collection.title }} Collections</p>
-  <div>
+<div class="p-5">
+  <p class="font-bold text-2xl mb-5">Our {{ collection.title }}</p>
+  <div class="grid grid-rows-6 grid-flow-col gap-4">
     {% for product in collection.products %}
       {% render 'product-card', product: product, show_buttons: true %}
     {% endfor %}

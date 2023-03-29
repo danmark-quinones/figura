@@ -1,0 +1,16 @@
+<a href="{{collection.url}}">
+  <div class="relative my-5 rounded overflow-hidden">
+    <div class="w-full h-300 overflow-hidden">
+      <img
+        class="w-full h-full"
+        src="{{collection.image | img_url:'Large'}}"
+        height="100"
+        width="100"
+        alt="{{collection.title}}"
+        loading="lazy" />
+    </div>
+    <div class="absolute bottom-0 collection-title w-full py-3">
+      <p class="text-center text-white text-2xl">{{ collection.title }} ( {{ collection.products_count }} )</p>
+    </div>
+  </div>
+</a>

@@ -1,27 +1,90 @@
-<div>
-  <p>HELLO</p>
-  <h3>{{ product.title }}</h3>
-  <form
-    method="POST"
-    action="/cart/add"
-    novalidate>
-    <input
-      type="hidden"
-      name="id"
-      value="{{ product.variants.first.id }}" />
-    <input
-      min="1"
-      type="number"
-      id="quantity"
-      name="quantity"
-      value="1" />
-    <input
-      type="hidden"
-      name="return_to"
-      value="back" />
-    <input
-      type="submit"
-      value="Add to cart"
-      class="btn" />
-  </form>
+<div class="p-5">
+
+  <div class="w-full h-200">
+    <img
+      class="w-full h-full"
+      src="{{product.featured_image | img_url:'Large'}}"
+      height="200"
+      width="100"
+      alt="{{product.title}}"
+      loading="lazy" />
+  </div>
+  <div>
+    <h3 class="font-bold text-2xl">{{ product.title }}</h3>
+
+    <div class="flex jusify-between items-center">
+      <p class="product-price font-sm text-xl mr-3">{{ product.price | money }}</p>
+      <p class="product-max-price line-through">{{ product.compare_at_price_max | money }}</p>
+    </div>
+
+    <div>
+      {% for variant in product.variants %}
+        {% if variant.inventory_quantity == 0 %}
+          <p>SOLD OUT</p>
+        {% else %}
+          <p>Stocks : {{ variant.inventory_quantity }}</p>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="my-3">
+      <p class="mb-3">Description :
+      </p>
+      <div>{{ product.description }}</div>
+    </div>
+  </div>
+
+  {% if product.variants[0].inventory_quantity == 0 %}
+    <p>WE DO NOT HAVE A STOCK FOR THIS ACTION FIGURE</p>
+  {% else %}
+    <form
+      method="POST"
+      action="/cart/add"
+      novalidate>
+      <input
+        type="hidden"
+        name="id"
+        value="{{ product.variants.first.id }}" />
+      <input
+        min="1"
+        type="hidden"
+        id="quantity"
+        name="quantity"
+        value="1" />
+      <input
+        type="hidden"
+        name="return_to"
+        value="back" />
+      <input
+        type="submit"
+        value="Add to cart"
+        class="primary-btn w-full py-3 rounded text-white uppercase" />
+    </form>
+
+    <form
+      method="POST"
+      action="/cart/add"
+      novalidate>
+      <input
+        type="hidden"
+        name="id"
+        value="{{ product.variants.first.id }}" />
+      <input
+        min="1"
+        type="hidden"
+        id="quantity"
+        name="quantity"
+        value="1" />
+      <input
+        type="hidden"
+        name="return_to"
+        value="/checkout/" />
+      <input
+        type="submit"
+        value="Buy Now"
+        class="secondary-btn w-full py-3 rounded text-white uppercase mt-3" />
+    </form>
+
+  {% endif %}
+
 </div>

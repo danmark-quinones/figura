@@ -12,7 +12,11 @@
 }
 .hero-banner-header{
     font-size: 40px;
-    color:goldenrod;
+    background: -webkit-linear-gradient(bottom right, #f2f2f2 0.5%,yellow, gold 40%, goldenrod);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.5px #2f2f2f;
+    letter-spacing: 2px;
     font-weight: 800;
 }
 .hero-banner-sub-header{
@@ -24,9 +28,8 @@
 }
 
 .hero-banner-button{
-    background-color: #6f6f6f;
+    background-color: #2f2f2f;
     padding: 10px 20px;
-    border-radius: 10px;
     color: #fff;
     text-transform: uppercase;
     transition: 0.3s;
