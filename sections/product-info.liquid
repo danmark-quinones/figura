@@ -41,48 +41,50 @@
       method="POST"
       action="/cart/add"
       novalidate>
-      <input
-        type="hidden"
-        name="id"
-        value="{{ product.variants.first.id }}" />
-      <input
-        min="1"
-        type="hidden"
-        id="quantity"
-        name="quantity"
-        value="1" />
-      <input
-        type="hidden"
-        name="return_to"
-        value="back" />
-      <input
-        type="submit"
-        value="Add to cart"
-        class="primary-btn w-full py-3 rounded text-white uppercase" />
+      <div>
+        <input
+          type="hidden"
+          name="id"
+          value="{{ product.variants.first.id }}" />
+        <input
+          min="1"
+          type="hidden"
+          id="quantity"
+          name="quantity"
+          value="1" />
+        <input
+          type="hidden"
+          name="return_to"
+          value="back" />
+        <input
+          type="submit"
+          value="Add to cart"
+          class="primary-btn w-full py-3 rounded text-white uppercase" />
+      </div>
     </form>
 
-    <form
-      method="POST"
-      action="/cart/add"
-      novalidate>
-      <input
-        type="hidden"
-        name="id"
-        value="{{ product.variants.first.id }}" />
-      <input
-        min="1"
-        type="hidden"
-        id="quantity"
-        name="quantity"
-        value="1" />
-      <input
-        type="hidden"
-        name="return_to"
-        value="/checkout/" />
-      <input
-        type="submit"
-        value="Buy Now"
-        class="secondary-btn w-full py-3 rounded text-white uppercase mt-3" />
+    <form method="POST" action="/cart/add">
+      <div>
+        <input
+          type="hidden"
+          name="id"
+          value="{{ product.variants.first.id }}" />
+        <input
+          min="1"
+          type="hidden"
+          id="quantity"
+          name="quantity"
+          value="1" />
+
+        <input
+          type="hidden"
+          name="return_to"
+          value="/checkout/" />
+        <input
+          type="submit"
+          value="Buy Now"
+          class="secondary-btn w-full py-3 rounded text-white uppercase mt-3" />
+      </div>
     </form>
 
   {% endif %}

@@ -20,6 +20,16 @@
     {{ 'application.css' | asset_url | stylesheet_tag }}
     {{ 'main.css' | asset_url | stylesheet_tag }}
     <script src="{{'application.js'|asset_url}}" defer="defer"></script>
+    <script src="{{'cart-notification.js'|asset_url}}" defer="defer"></script>
+    <script src="{{'cart.js'|asset_url}}" defer="defer"></script>
+
+    <script type="application/json" data-ajax-cart-initial-state>
+      {{ cart | json }}
+    </script>
+
+    <script type="module">
+      import '{{ "liquid-ajax-cart-v1.10.3.js" | asset_url }}';
+    </script>
 
   </head>
 
@@ -27,17 +37,25 @@
 
     {% section 'header' %}
 
-
-
     <main role="main">
+
 
       <div id="mobile-menu" class="mobile-menu">
         {% render 'mobile-menu' %}
       </div>
 
+
       {{ content_for_layout }}
+
     </main>
 
     {% section 'footer' %}
+
+    <script type="module">
+      import { getCartState, subscribeToCartStateUpdate } from '{{ "liquid-ajax-cart-v1.10.3.js" | asset_url }}';
+      import { setData } from '{{ "cart.js" | asset_url }}';
+      subscribeToCartStateUpdate( state => { setData(state.cart.items[0]) ; console.log('Updated state: ', state.cart.items[0]);});
+
+    </script>
   </body>
 </html>

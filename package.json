@@ -11,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "tailwindcss": "^3.2.7"
+  },
+  "dependencies": {
+    "liquid-ajax-cart": "^1.10.3"
   }
 }

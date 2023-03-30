@@ -24,11 +24,14 @@
           <a href="{{routes.cart_url}}">
             {% render 'icon-cart' %}
           </a>
-          {% if cart.item_count > 0 %}
-            <div class="cart-count-container">
+          <div data-ajax-cart-bind-state="cart.item_count" class="cart-count-container">
+            {% if cart.item_count > 0 %}
+
               <span>{{ cart.item_count }}</span>
-            </div>
-          {% endif %}
+
+            {% endif %}
+          </div>
+
         </div>
         <div class="menu-icon" id="open-menu">
           {% render 'icon-unfold-menu' %}
