@@ -1,12 +1,14 @@
 {{ 'product.css' | asset_url | stylesheet_tag }}
   <div class="product-card-container">
+
+  <div class="product-card-img-container">
+    <img src="{{product.featured_image | img_url:'300x300'}}" />
+  </div>
   <a href="{{product.url}}">
-    <div class="product-card-img-container">
-      <img src="{{product.featured_image | img_url:'300x300'}}" />
-    </div>
     <p class="product-card-title">{{ product.title }}</p>
-    <p class="product-card-price">{{ product.price | money }}</p>
   </a>
+  <p class="product-card-price">{{ product.price | money }}</p>
+
 
   {% comment %}
   <div>

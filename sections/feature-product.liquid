@@ -13,7 +13,7 @@
     {%- case block.type -%}
 
       {% when 'collection' %}
-      <div class="grid grid-rows-3 grid-flow-col gap-4 fp-list-container">
+      <div class="flex items-center fp-list-container">
         {% for product in block.settings.featured_product.products %}
           {% render 'product-card', product: product, show_buttons: false %}
         {% endfor %}

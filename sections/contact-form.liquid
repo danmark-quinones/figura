@@ -1,0 +1,66 @@
+<div class="p-5">
+  {% render 'contact-us' blocks: blocks, section: section %}
+</div>
+
+{% schema %}
+  {
+    "name": "Contact Us Form",
+    "presets": [
+      {
+        "name": "⚡Contact Us Form"
+      }
+    ],
+    "settings": [
+      {
+        "type": "text",
+        "id": "header_contact",
+        "label": "Page Header"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "email",
+        "name": "⚡Email Address Field",
+        "settings": [
+          {
+            "type": "text",
+            "id": "email_address_label",
+            "label": "Email Address Field Label"
+          }, {
+            "type": "text",
+            "id": "email_address_placeholder",
+            "label": "Email Address Field Placeholder"
+          }
+        ]
+      }, {
+        "type": "message",
+        "name": "⚡Message Field",
+        "settings": [
+          {
+            "type": "text",
+            "id": "message_label",
+            "label": "Message Field Label"
+          }, {
+            "type": "text",
+            "id": "message_placeholder",
+            "label": "Message Field Placeholder"
+          }
+        ]
+      }, {
+        "type": "fullname",
+        "name": "⚡Full Name",
+        "settings": [
+          {
+            "type": "text",
+            "id": "fullname_label",
+            "label": "Full Name Field Label"
+          }, {
+            "type": "text",
+            "id": "fullname_placeholder",
+            "label": "Full Name Field Placeholder"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

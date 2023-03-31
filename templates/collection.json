@@ -4,9 +4,13 @@
       "type": "collection-list",
       "settings": {
       }
+    },
+    "contact_form":{
+      "type":"contact-form"
     }
   },
   "order": [
-    "main"
+    "main",
+    "contact_form"
   ]
 }

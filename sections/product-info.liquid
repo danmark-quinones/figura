@@ -1,6 +1,6 @@
 <div class="p-5">
 
-  <div class="w-full h-200">
+  <div class="w-full h-150 overflow-hidden">
     <img
       class="w-full h-full"
       src="{{product.featured_image | img_url:'Large'}}"
@@ -12,25 +12,34 @@
   <div>
     <h3 class="font-bold text-2xl">{{ product.title }}</h3>
 
-    <div class="flex jusify-between items-center">
+    <div class="flex justify-between items-center">
       <p class="product-price font-sm text-xl mr-3">{{ product.price | money }}</p>
-      <p class="product-max-price line-through">{{ product.compare_at_price_max | money }}</p>
+      {% if section.settings.price_comparison %}
+        <p class="product-max-price line-through">{{ product.compare_at_price_max | money }}</p>
+      {% endif %}
     </div>
 
-    <div>
-      {% for variant in product.variants %}
-        {% if variant.inventory_quantity == 0 %}
-          <p>SOLD OUT</p>
-        {% else %}
-          <p>Stocks : {{ variant.inventory_quantity }}</p>
-        {% endif %}
-      {% endfor %}
-    </div>
+    <hr/>
+
+    {% if section.settings.show_stocks %}
+      <div>
+        {% for variant in product.variants %}
+          {% if variant.inventory_quantity == 0 %}
+            <p>SOLD OUT</p>
+          {% else %}
+            <p>Stocks : {{ variant.inventory_quantity }}</p>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
 
     <div class="my-3">
-      <p class="mb-3">Description :
-      </p>
-      <div>{{ product.description }}</div>
+      {% if section.settings.desc_label != blank %}
+        <p class="mb-3 text-sm text-gray-500" for="quantity">
+          {{ section.settings.desc_label }}
+        </p>
+      {% endif %}
+      <p>{{ product.description }}</p>
     </div>
   </div>
 
@@ -49,9 +58,11 @@
           name="id"
           value="{{ product.variants.first.id }}" />
         <div class="flex items-center">
-          <label class="mr-5" for="quantity">
-            Quantity :
-          </label>
+          {% if section.settings.qty_label != blank %}
+            <label class="mr-5" for="quantity">
+              {{ section.settings.qty_label }}
+            </label>
+          {% endif %}
           <input
             class="w-100 rounded my-3 text-center"
             style="border: 2px solid #2f2f2f;"
@@ -102,5 +113,32 @@
 </div>
 
 {% schema %}
-  {}
+  {
+    "name": "Product Information",
+    "presets": [
+      {
+        "name": "⚡Product Information"
+      }
+    ],
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_stocks",
+        "label": "Show Stocks"
+      }, {
+        "type": "checkbox",
+        "id": "price_comparison",
+        "label": "Show Old Price?"
+      }, {
+        "type": "text",
+        "id": "qty_label",
+        "label": "Quantity Field Label"
+      }, {
+        "type": "text",
+        "id": "desc_label",
+        "label": "Description Label"
+      }
+    ],
+    "blocks": []
+  }
 {% endschema %}

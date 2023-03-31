@@ -77,7 +77,7 @@
 }
 .collection-card-img-container{
     height: 200px;
-    width: 100%;
+    width: 200px;
     overflow: hidden;
 }
 .collection-card-img-container > img{
@@ -114,8 +114,33 @@
         width: 100%;
         overflow-x: auto;
     }
+    .fp-list-container::-webkit-scrollbar {
+        height: 2px;
+        width: 2px;
+    }
+      
+    /* Track */
+    .fp-list-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    
+    /* Handle */
+    .fp-list-container::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+    
+    /* Handle on hover */
+    .fp-list-container::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
     .collection-list-container{
-        display: block;
+        display: block; 
+    }
+    .collection-card-img-container{
+        height: 200px;
+        width: 100%;
+        overflow: hidden;
     }
     .collection-card-container{
         margin: 10px 0px;

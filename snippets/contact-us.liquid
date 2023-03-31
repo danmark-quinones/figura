@@ -1,0 +1,49 @@
+<div class="p-5" style="background:#f2f2f2">
+    {% if section.settings.header_contact !=blank %}
+        <h2 class="text-2xl mb-3">{{section.settings.header_contact}}</h2>
+    {% endif %}
+  
+    {% form 'contact' %}
+    <div>
+      {% for block in section.blocks %}
+        {%- case block.type -%}
+          {% when 'fullname' %}
+          {% if block.settings.fullname_label != blank %}
+            <label class="block mt-3" for="fullname">{{ block.settings.fullname_label }}</label>
+            <input
+              class="rounded w-full p-2"
+              style="border: 2px solid gray;"
+              id="fullname"
+              name="contact[fullname]"
+              placeholder="{{block.settings.fullname_placeholder}}" />
+          {% endif %}
+
+          {% when 'email' %}
+          {% if block.settings.email_address_label != blank %}
+            <label class="block mt-3" for="email">{{ block.settings.email_address_label }}</label>
+            <input
+            class="rounded w-full p-2"
+              style="border: 2px solid gray;"
+              id="contact[email]"
+              name="email"
+              placeholder="{{block.settings.email_address_placeholder}}">
+          {% endif %}
+
+          {% when 'message' %}
+          {% if block.settings.message_label != blank %}
+            <label class="block mt-3" for="message">{{ block.settings.message_label }}</label>
+            <textarea
+            class="rounded w-full p-2"
+              style="border: 2px solid gray;"
+              id="contact[message]"
+              name="message"
+              placeholder="{{block.settings.message_placeholder}}" /></textarea>
+          {% endif %}
+
+        {%- endcase -%}
+      {% endfor %}
+      <input type="submit" class="primary-btn rounded w-full text-white uppercase p-3 mt-3" value="Submit"/>
+    </div>
+
+    {% endform %}
+</div>
