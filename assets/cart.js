@@ -6,8 +6,9 @@ export function setData(data){
         // title:data.getAttribute("title"),
         // price:data.getAttribute("price"),
         title:data.title,
-        price:data.price,
-        image:data.featured_image
+        price:data.price/100 * data.quantity,
+        image:data.featured_image,
+        qty:data.quantity
     }
 
     // console.log(dataObject)

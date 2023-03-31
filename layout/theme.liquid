@@ -51,11 +51,6 @@
 
     {% section 'footer' %}
 
-    <script type="module">
-      import { getCartState, subscribeToCartStateUpdate } from '{{ "liquid-ajax-cart-v1.10.3.js" | asset_url }}';
-      import { setData } from '{{ "cart.js" | asset_url }}';
-      subscribeToCartStateUpdate( state => { setData(state.cart.items[0]) ; console.log('Updated state: ', state.cart.items[0]);});
 
-    </script>
   </body>
 </html>

@@ -34,6 +34,8 @@
     </div>
   </div>
 
+  <hr/>
+
   {% if product.variants[0].inventory_quantity == 0 %}
     <p>WE DO NOT HAVE A STOCK FOR THIS ACTION FIGURE</p>
   {% else %}
@@ -46,12 +48,20 @@
           type="hidden"
           name="id"
           value="{{ product.variants.first.id }}" />
-        <input
-          min="1"
-          type="hidden"
-          id="quantity"
-          name="quantity"
-          value="1" />
+        <div class="flex items-center">
+          <label class="mr-5" for="quantity">
+            Quantity :
+          </label>
+          <input
+            class="w-100 rounded my-3 text-center"
+            style="border: 2px solid #2f2f2f;"
+            min="1"
+            type="number"
+            id="quantity"
+            name="quantity"
+            value="1" />
+        </div>
+
         <input
           type="hidden"
           name="return_to"
@@ -90,3 +100,7 @@
   {% endif %}
 
 </div>
+
+{% schema %}
+  {}
+{% endschema %}

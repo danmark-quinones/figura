@@ -41,8 +41,8 @@ template.innerHTML=`
                 <img class="product-img"/>
             </div>
             <div>
-                <p class="product-name"><slot  name="name"/>EY</p>
-                <p class="product-price"><slot  name="price"/>YOW</p>
+                <p class="product-name"><slot  name="name"/></p>
+                <p class="product-price"><slot name="final-computation"/></p>
             </div>
         </div>
         <slot id="view-cart" name="view-cart"/>
@@ -63,16 +63,15 @@ class CartNotification extends HTMLElement {
         console.log("HEY")
     }
 
-    open(data){
+    open(product){
         const notifContainer = this.shadowRoot.querySelector('.cart-notif-container')
-        console.log("DATA",data.data)
-        this.shadowRoot.querySelector('.product-name').innerText = data.data.title;
-        this.shadowRoot.querySelector('.product-price').innerText = data.data.price.toLocaleString();
-        this.shadowRoot.querySelector('.product-img').src = data.data.image.url;
+        this.shadowRoot.querySelector('.product-name').innerText = product.data.title;
+        this.shadowRoot.querySelector('.product-price').innerText = `Qty: ${product.data.qty} - Total Price : $ ${product.data.price.toLocaleString()}`;
+        this.shadowRoot.querySelector('.product-img').src = product.data.image.url;
         notifContainer.style.display = 'block';
-        // setTimeout(()=>{
-        //     this.close()
-        // },[3000])
+        setTimeout(()=>{
+            this.close()
+        },[3000])
     }
 
     close(){
