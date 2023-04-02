@@ -79,8 +79,39 @@
         "featured_description": "Jampack New Release Figures"
       }
     },
-    "contact_form":{
-      "type":"contact-form"
+    "contact_form": {
+      "type": "contact-form",
+      "blocks": {
+        "62067c41-dbaf-4c89-a693-9bb5273b8ede": {
+          "type": "fullname",
+          "settings": {
+            "fullname_label": "Fullname",
+            "fullname_placeholder": "Input your fullname here."
+          }
+        },
+        "989f2904-031d-4440-95f9-7fe5c77f2996": {
+          "type": "email",
+          "settings": {
+            "email_address_label": "Email Address",
+            "email_address_placeholder": "Input a valid email."
+          }
+        },
+        "01581236-d0b2-424f-ae4a-c5a4d14cbef0": {
+          "type": "message",
+          "settings": {
+            "message_label": "Message",
+            "message_placeholder": "What is your concern?"
+          }
+        }
+      },
+      "block_order": [
+        "62067c41-dbaf-4c89-a693-9bb5273b8ede",
+        "989f2904-031d-4440-95f9-7fe5c77f2996",
+        "01581236-d0b2-424f-ae4a-c5a4d14cbef0"
+      ],
+      "settings": {
+        "header_contact": "Contact Us!"
+      }
     }
   },
   "order": [
