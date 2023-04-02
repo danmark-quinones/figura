@@ -39,3 +39,15 @@
 .collection-title{
     background-color: rgba(0, 0, 0, 0.5);
 }
+.collection-container{
+    padding: 20px 200px;
+}
+
+@media (max-width: 500px) {
+    .collection-container{
+        padding: 20px;
+    }
+    .collection-product-container{
+        grid-template-rows: repeat(6, minmax(0, 1fr))
+    }
+}
