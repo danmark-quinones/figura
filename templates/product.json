@@ -3,10 +3,10 @@
     "main": {
       "type": "product-info",
       "settings": {
-        "show_stocks": false,
-        "price_comparison": false,
-        "qty_label": "",
-        "desc_label": ""
+        "show_stocks": true,
+        "price_comparison": true,
+        "qty_label": "Quantity :",
+        "desc_label": "Product Information"
       }
     },
     "ef370c50-b0ac-4093-8a17-f525e0540f14": {
