@@ -16,9 +16,9 @@
       crossorigin>
 
     {{ content_for_header }}
-
-    {{ 'application.css' | asset_url | stylesheet_tag }}
     {{ 'main.css' | asset_url | stylesheet_tag }}
+    {{ 'application.css' | asset_url | stylesheet_tag }}
+
     <script src="{{'application.js'|asset_url}}" defer="defer"></script>
     <script src="{{'cart-notification.js'|asset_url}}" defer="defer"></script>
     <script src="{{'cart.js'|asset_url}}" defer="defer"></script>

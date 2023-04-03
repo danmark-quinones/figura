@@ -13,7 +13,7 @@
 }
 .product-card-img-container > img{
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 .product-card-title{
     color: #2f2f2f;
@@ -39,4 +39,5 @@
         height: 100px;
         width: 100%;
     }
+    
 }

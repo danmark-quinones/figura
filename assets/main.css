@@ -41,7 +41,7 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 .collection-container{
-    padding: 20px 200px;
+    padding: 20px 200px !important;
 }
 .menu-icon{
     display: none;
@@ -110,10 +110,10 @@
 
 @media (max-width: 500px) {
     .collection-container{
-        padding: 20px;
+        padding: 20px !important;
     }
-    .collection-product-container{
-        grid-template-rows: repeat(6, minmax(0, 1fr))
+    .card-list-container{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .menu-icon{
         display: block;
