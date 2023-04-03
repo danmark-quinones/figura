@@ -1,5 +1,7 @@
 <div class="p-5 collection-container">
-  <p class="font-bold text-2xl mb-5">Our {{ collection.title }}</p>
+  <p class="font-bold text-2xl">Our {{ collection.title }}</p>
+  <small class="mb-5 block" style="color: gray;">We have {{ collection.products_count }} action figures for you</small>
+
   <div class="collection-product-container grid md:grid-rows-3 grid-flow-col gap-4 sm:grid-rows-6">
     {% for product in collection.products %}
       {% render 'product-card', product: product, show_buttons: true %}

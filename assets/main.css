@@ -42,6 +42,12 @@
 .collection-container{
     padding: 20px 200px;
 }
+.menu-icon{
+    display: none;
+}
+.contact-us-container{
+    padding: 50px 200px;
+}
 
 @media (max-width: 500px) {
     .collection-container{
@@ -49,5 +55,11 @@
     }
     .collection-product-container{
         grid-template-rows: repeat(6, minmax(0, 1fr))
+    }
+    .menu-icon{
+        display: block;
+    }
+    .contact-us-container{
+        padding: 20px;
     }
 }
