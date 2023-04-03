@@ -3,10 +3,49 @@
     "main": {
       "type": "product-info",
       "settings": {
+        "show_stocks": false,
+        "price_comparison": false,
+        "qty_label": "",
+        "desc_label": ""
+      }
+    },
+    "ef370c50-b0ac-4093-8a17-f525e0540f14": {
+      "type": "contact-form",
+      "blocks": {
+        "c5162c77-7d8b-4c28-9f0e-66c8415db3bf": {
+          "type": "fullname",
+          "settings": {
+            "fullname_label": "Full name",
+            "fullname_placeholder": "Insert your name here"
+          }
+        },
+        "40d39f5f-bb00-41b9-8f55-403170fa10da": {
+          "type": "email",
+          "settings": {
+            "email_address_label": "Email Address",
+            "email_address_placeholder": "Input your email here."
+          }
+        },
+        "cc04b516-8400-46bd-9079-9fb3afe0457c": {
+          "type": "message",
+          "settings": {
+            "message_label": "Message",
+            "message_placeholder": "Let us know your concerns."
+          }
+        }
+      },
+      "block_order": [
+        "c5162c77-7d8b-4c28-9f0e-66c8415db3bf",
+        "40d39f5f-bb00-41b9-8f55-403170fa10da",
+        "cc04b516-8400-46bd-9079-9fb3afe0457c"
+      ],
+      "settings": {
+        "header_contact": "Some question?  Contact Us!"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "ef370c50-b0ac-4093-8a17-f525e0540f14"
   ]
 }
