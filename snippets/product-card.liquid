@@ -1,5 +1,5 @@
 {{ 'product.css' | asset_url | stylesheet_tag }}
-  <div class="product-card-container">
+<div class="product-card-container">
 
   <div class="product-card-img-container">
     <img src="{{product.featured_image | img_url:'300x300'}}" />
@@ -20,29 +20,30 @@
   OPEN NOTIF
   </button>
   </div>
-  {% endcomment %}{% if show_buttons == true %}
-    <form
-      method="POST"
-      action="/cart/add"
-      novalidate>
-      <input
-        type="hidden"
-        name="id"
-        value="{{ product.variants.first.id }}" />
-      <input
-        min="1"
-        type="hidden"
-        id="quantity"
-        name="quantity"
-        value="1" />
-      <input
-        type="hidden"
-        name="return_to"
-        value="back" />
-      <input
-        type="submit"
-        value="Add to cart"
-        class="primary-btn py-2 px-5 text-white rounded hover:bg-yellow mt-3 w-full" />
-    </form>
+  {% if show_buttons == true %}
+  <form
+  method="POST"
+  action="/cart/add"
+  novalidate>
+  <input
+  type="hidden"
+  name="id"
+  value="{{ product.variants.first.id }}" />
+  <input
+  min="1"
+  type="hidden"
+  id="quantity"
+  name="quantity"
+  value="1" />
+  <input
+  type="hidden"
+  name="return_to"
+  value="back" />
+  <input
+  type="submit"
+  value="Add to cart"
+  class="primary-btn py-2 px-5 text-white rounded hover:bg-yellow mt-3 w-full" />
+  </form>
+
   {% endif %}
-</div>
+  {% endcomment %}</div>
