@@ -5,8 +5,39 @@
       "settings": {
       }
     },
-    "contact_form":{
-      "type":"contact-form"
+    "contact_form": {
+      "type": "contact-form",
+      "blocks": {
+        "36471533-8696-4822-b829-aba945fa7a45": {
+          "type": "fullname",
+          "settings": {
+            "fullname_label": "Fullname",
+            "fullname_placeholder": "Insert your name here."
+          }
+        },
+        "a0f69e8a-a4f0-4c75-87f8-1f2f1497007b": {
+          "type": "email",
+          "settings": {
+            "email_address_label": "Email Address",
+            "email_address_placeholder": "Insert your valid email here"
+          }
+        },
+        "c2275bef-6e01-4524-8d27-94f23711e342": {
+          "type": "message",
+          "settings": {
+            "message_label": "Message",
+            "message_placeholder": "Let us know your concerns."
+          }
+        }
+      },
+      "block_order": [
+        "36471533-8696-4822-b829-aba945fa7a45",
+        "a0f69e8a-a4f0-4c75-87f8-1f2f1497007b",
+        "c2275bef-6e01-4524-8d27-94f23711e342"
+      ],
+      "settings": {
+        "header_contact": "Contact Us!"
+      }
     }
   },
   "order": [
