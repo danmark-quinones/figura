@@ -2,14 +2,20 @@ const openMenuButton = document.querySelector("#open-menu")
 const closeMenuButton = document.querySelector("#close-menu")
 const menuContainer = document.querySelector("#mobile-menu")
 
+closeMenuButton.style.display="none"
+
 openMenuButton.addEventListener("click" , function(){
     menuContainer.classList.add("show")
     menuContainer.classList.remove("hide")
+    openMenuButton.style.display="none"
+    closeMenuButton.style.display="block"
 })
 
 closeMenuButton.addEventListener("click" , function(){
     menuContainer.classList.add("hide")
     menuContainer.classList.remove("show")
+    openMenuButton.style.display="block"
+    closeMenuButton.style.display="none"
 })
 
 let inventoryHash = document.querySelectorAll('[inventorymanagment]'); 

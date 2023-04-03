@@ -772,6 +772,10 @@ video {
   .sm\:grid-rows-6 {
     grid-template-rows: repeat(6, minmax(0, 1fr));
   }
+
+  .sm\:flex-col {
+    flex-direction: column;
+  }
 }
 
 @media (min-width: 768px) {

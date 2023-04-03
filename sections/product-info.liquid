@@ -1,6 +1,6 @@
-<div class="p-5">
+<div class="product-info-container p-5 flex items-start justify-between">
 
-  <div class="w-full h-150 overflow-hidden">
+  <div class="product-info-img-container">
     <img
       class="w-full h-full"
       src="{{product.featured_image | img_url:'Large'}}"
@@ -9,7 +9,8 @@
       alt="{{product.title}}"
       loading="lazy" />
   </div>
-  <div>
+
+  <div class="product-info-details-container">
     <h3 class="font-bold text-2xl">{{ product.title }}</h3>
 
     <div class="flex items-center">
@@ -43,76 +44,76 @@
       {% endif %}
       <p>{{ product.description }}</p>
     </div>
-  </div>
 
-  <hr/>
+    <hr/>
 
-  {% if product.variants[0].inventory_quantity == 0 %}
-    <div class="text-center p-3" style="background-color: #f2f2f2;">
-      <p>SORRY , WE DO NOT HAVE A STOCK FOR THIS ACTION FIGURE</p>
-    </div>
-  {% else %}
-    <form
-      method="POST"
-      action="/cart/add"
-      novalidate>
-      <div>
-        <input
-          type="hidden"
-          name="id"
-          value="{{ product.variants.first.id }}" />
-        <div class="flex items-center">
-          {% if section.settings.qty_label != blank %}
-            <label class="mr-5" for="quantity">
-              {{ section.settings.qty_label }}
-            </label>
-          {% endif %}
+    {% if product.variants[0].inventory_quantity == 0 %}
+      <div class="text-center p-3" style="background-color: #f2f2f2;">
+        <p>SORRY , WE DO NOT HAVE A STOCK FOR THIS ACTION FIGURE</p>
+      </div>
+    {% else %}
+      <form
+        method="POST"
+        action="/cart/add"
+        novalidate>
+        <div>
           <input
-            class="w-100 rounded my-3 text-center"
-            style="border: 2px solid #2f2f2f;"
+            type="hidden"
+            name="id"
+            value="{{ product.variants.first.id }}" />
+          <div class="flex items-center">
+            {% if section.settings.qty_label != blank %}
+              <label class="mr-5" for="quantity">
+                {{ section.settings.qty_label }}
+              </label>
+            {% endif %}
+            <input
+              class="w-100 rounded my-3 text-center"
+              style="border: 2px solid #2f2f2f;"
+              min="1"
+              type="number"
+              id="quantity"
+              name="quantity"
+              value="1" />
+          </div>
+
+          <input
+            type="hidden"
+            name="return_to"
+            value="back" />
+          <input
+            type="submit"
+            value="Add to cart"
+            class="primary-btn w-full py-3 rounded text-white uppercase" />
+        </div>
+      </form>
+
+      <form method="POST" action="/cart/add">
+        <div>
+          <input
+            type="hidden"
+            name="id"
+            value="{{ product.variants.first.id }}" />
+          <input
             min="1"
-            type="number"
+            type="hidden"
             id="quantity"
             name="quantity"
             value="1" />
+
+          <input
+            type="hidden"
+            name="return_to"
+            value="/checkout/" />
+          <input
+            type="submit"
+            value="Buy Now"
+            class="secondary-btn w-full py-3 rounded text-white uppercase mt-3" />
         </div>
+      </form>
 
-        <input
-          type="hidden"
-          name="return_to"
-          value="back" />
-        <input
-          type="submit"
-          value="Add to cart"
-          class="primary-btn w-full py-3 rounded text-white uppercase" />
-      </div>
-    </form>
-
-    <form method="POST" action="/cart/add">
-      <div>
-        <input
-          type="hidden"
-          name="id"
-          value="{{ product.variants.first.id }}" />
-        <input
-          min="1"
-          type="hidden"
-          id="quantity"
-          name="quantity"
-          value="1" />
-
-        <input
-          type="hidden"
-          name="return_to"
-          value="/checkout/" />
-        <input
-          type="submit"
-          value="Buy Now"
-          class="secondary-btn w-full py-3 rounded text-white uppercase mt-3" />
-      </div>
-    </form>
-
-  {% endif %}
+    {% endif %}
+  </div>
 
 </div>
 

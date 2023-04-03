@@ -10,16 +10,15 @@
         <p class="navigation-logo">SHOP NAME</p>
       {% endif %}
 
-      <nav class="flex justify-between items-center lg-link">
+      <nav class="flex justify-between items-center">
+        <div class="lg-link flex justify-between items-center">
+          {% for link in linklists.main-menu.links %}
+            <div class="mx-5 text-blue hover:text-black">
+              <a href="{{link.url}}">{{ link.title }}</a>
+            </div>
+          {% endfor %}
+        </div>
 
-        {% for link in linklists.main-menu.links %}
-          <div class="mx-5 text-blue hover:text-black">
-            <a href="{{link.url}}">{{ link.title }}</a>
-          </div>
-        {% endfor %}
-      </nav>
-
-      <div class="flex justify-between  items-center">
         <div class="mx-5 text-blue hover:text-black cart-icon-container">
           <a href="{{routes.cart_url}}">
             {% render 'icon-cart' %}
@@ -33,10 +32,16 @@
           </div>
 
         </div>
+
         <div class="menu-icon" id="open-menu">
           {% render 'icon-unfold-menu' %}
         </div>
-      </div>
+
+        <div id="close-menu" id="close-menu">
+          {% render 'icon-fold-menu' %}
+        </div>
+
+      </nav>
     </div>
   </div>
 </div>

@@ -10,8 +10,7 @@ template.innerHTML=`
         padding:10px;
         margin:10px;
         box-shadow:2px 2px 5px lightgray;
-        position :fixed;
-        top:0%;
+        z-index:15;
     }
     h3{
         color:goldenrod

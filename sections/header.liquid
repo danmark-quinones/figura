@@ -1,49 +1,51 @@
 <div class="relative">
   {% render 'navigation' data: section.settings %}
 
-  <cart-notification data="{{cart.items}}">
-    <div class="text-right" slot="close-icon">
-      <p>Close (X)</p>
-    </div>
-
-    <div>
-      <div>
-        <div slot="image"></div>
+  <div class="cart-notification-container">
+    <cart-notification data="{{cart.items}}">
+      <div class="text-right" slot="close-icon">
+        <p>Close (X)</p>
       </div>
+
       <div>
-        <div slot="name"></div>
-        <div class="flex items-center justify-between">
-          <p slot="final-computation"></p>
+        <div>
+          <div slot="image"></div>
+        </div>
+        <div>
+          <div slot="name"></div>
+          <div class="flex items-center justify-between">
+            <p slot="final-computation"></p>
+          </div>
         </div>
       </div>
-    </div>
 
 
-    <div slot="view-cart">
-      <div class="flex items-center justify-between mb-3">
-        <a href="/cart">
-          <button
-            style="width:150px"
-            class="primary-btn w-200 py-3 rounded text-white uppercase"
-            class="primary-button">VIEW CART</button>
-        </a>
-        <form method="POST" action="{{routes.cart_url}}">
-          <button
-            class="secondary-btn w-200 ml-3 py-3 px-5 rounded text-white uppercase"
-            style="width:150px"
-            name="checkout"
-            type="submit">
-            Checkout
-          </button>
-        </form>
+      <div slot="view-cart">
+        <div class="flex items-center justify-between mb-3">
+          <a href="/cart">
+            <button
+              style="width:150px"
+              class="primary-btn w-200 py-3 rounded text-white uppercase"
+              class="primary-button">VIEW CART</button>
+          </a>
+          <form method="POST" action="{{routes.cart_url}}">
+            <button
+              class="secondary-btn w-200 ml-3 py-3 px-5 rounded text-white uppercase"
+              style="width:150px"
+              name="checkout"
+              type="submit">
+              Checkout
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
-  </cart-notification>
+    </cart-notification>
+  </div>
   <script type="module">
     import { getCartState, subscribeToCartStateUpdate } from '{{ "liquid-ajax-cart-v1.10.3.js" | asset_url }}';
     import { setData } from '{{ "cart.js" | asset_url }}';
     var counter = 0
-    subscribeToCartStateUpdate( state => { counter +=1; if(counter===3){setData(state.cart.items[0]); counter=0 };console.log('Updated: ', counter);});</script>
+            subscribeToCartStateUpdate( state => { counter +=1; if(counter===3){setData(state.cart.items[0]); counter=0 };console.log('Updated: ', counter);});</script>
 </div>
 
 {% schema %}
