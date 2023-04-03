@@ -9,6 +9,25 @@
         "desc_label": "Product Information"
       }
     },
+    "46649a4d-5b94-446e-8a32-acacd42885e6": {
+      "type": "feature-product",
+      "blocks": {
+        "8a4d661a-5fbc-4c1a-b704-58f580745d18": {
+          "type": "collection",
+          "settings": {
+            "featured_product": "demon-slayer",
+            "show_price": false
+          }
+        }
+      },
+      "block_order": [
+        "8a4d661a-5fbc-4c1a-b704-58f580745d18"
+      ],
+      "settings": {
+        "featured_header": "Try Also",
+        "featured_description": ""
+      }
+    },
     "ef370c50-b0ac-4093-8a17-f525e0540f14": {
       "type": "contact-form",
       "blocks": {
@@ -46,6 +65,7 @@
   },
   "order": [
     "main",
+    "46649a4d-5b94-446e-8a32-acacd42885e6",
     "ef370c50-b0ac-4093-8a17-f525e0540f14"
   ]
 }
