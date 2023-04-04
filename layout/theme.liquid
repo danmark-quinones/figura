@@ -21,7 +21,10 @@
 
     <script src="{{'application.js'|asset_url}}" defer="defer"></script>
     <script src="{{'cart-notification.js'|asset_url}}" defer="defer"></script>
-    <script src="{{'cart.js'|asset_url}}" defer="defer"></script>
+    <script
+      src="{{'cart.js'|asset_url}}"
+      defer="defer"
+      async></script>
 
     <script type="application/json" data-ajax-cart-initial-state>
       {{ cart | json }}

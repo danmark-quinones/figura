@@ -63,14 +63,15 @@ class CartNotification extends HTMLElement {
     }
 
     open(product){
+        console.log(product)
         const notifContainer = this.shadowRoot.querySelector('.cart-notif-container')
         this.shadowRoot.querySelector('.product-name').innerText = product.data.title;
         this.shadowRoot.querySelector('.product-price').innerText = `Qty: ${product.data.qty} - Total Price : $ ${product.data.price.toLocaleString()}`;
-        this.shadowRoot.querySelector('.product-img').src = product.data.image.url;
+        this.shadowRoot.querySelector('.product-img').src = product.data.image;
         notifContainer.style.display = 'block';
         setTimeout(()=>{
             this.close()
-        },[3000])
+        },[5000])
     }
 
     close(){

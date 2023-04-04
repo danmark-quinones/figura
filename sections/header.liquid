@@ -43,9 +43,7 @@
   </div>
   <script type="module">
     import { getCartState, subscribeToCartStateUpdate } from '{{ "liquid-ajax-cart-v1.10.3.js" | asset_url }}';
-    import { setData } from '{{ "cart.js" | asset_url }}';
-    var counter = 0
-            subscribeToCartStateUpdate( state => { counter +=1; if(counter===3){setData(state.cart.items[0]); counter=0 };console.log('Updated: ', counter);});</script>
+  </script>
 </div>
 
 {% schema %}

@@ -43,9 +43,40 @@
         </p>
       {% endif %}
       <p>{{ product.description }}</p>
+      <p>{{ product.variants[0].id }}</p>
     </div>
 
     <hr/>
+
+    <div class="flex flex-col items-end w-full product-info-actions">
+      <div style="width:300px">
+        <div class="flex items-center">
+          {% if section.settings.qty_label != blank %}
+            <label class="mr-5" for="quantity">
+              {{ section.settings.qty_label }}
+            </label>
+          {% endif %}
+          <input
+            class="w-100 rounded my-3 text-center qty-field"
+            style="border: 2px solid #2f2f2f;"
+            min="1"
+            type="number"
+            id="quantity"
+            name="quantity"
+            value="1" />
+        </div>
+
+        <button
+          class="add-cart primary-btn rounded py-3 text-center text-white w-full"
+          data-pid="{{product.variants.first.id}}"
+          data-title="{{product.title}}"
+          data-price="{{product.price}}"
+          data-img="{{product.featured_image}}">
+          ADD TO CART
+        </button>
+      </div>
+    </div>
+
 
     {% if product.variants[0].inventory_quantity == 0 %}
       <div class="text-center p-3" style="background-color: #f2f2f2;">
@@ -53,41 +84,44 @@
       </div>
     {% else %}
       <div class="flex flex-col items-end w-full product-info-actions">
+        {% comment %}
         <form
-          method="POST"
-          action="/cart/add"
-          novalidate>
-          <div style="width:300px">
-            <input
-              type="hidden"
-              name="id"
-              value="{{ product.variants.first.id }}" />
-            <div class="flex items-center">
-              {% if section.settings.qty_label != blank %}
-                <label class="mr-5" for="quantity">
-                  {{ section.settings.qty_label }}
-                </label>
-              {% endif %}
-              <input
-                class="w-100 rounded my-3 text-center"
-                style="border: 2px solid #2f2f2f;"
-                min="1"
-                type="number"
-                id="quantity"
-                name="quantity"
-                value="1" />
-            </div>
+        method="POST"
+        action="/cart/add"
+        novalidate>
+        <div style="width:300px">
+        <input
+        type="hidden"
+        name="id"
+        value="{{ product.variants.first.id }}" />
+        <div class="flex items-center">
+        {% if section.settings.qty_label != blank %}
+        <label class="mr-5" for="quantity">
+        {{ section.settings.qty_label }}
+        </label>
+        {% endif %}
+        <input
+        class="w-100 rounded my-3 text-center"
+        style="border: 2px solid #2f2f2f;"
+        min="1"
+        type="number"
+        id="quantity"
+        name="quantity"
+        value="1" />
+        </div>
 
-            <input
-              type="hidden"
-              name="return_to"
-              value="back" />
-            <input
-              type="submit"
-              value="Add to cart"
-              class="primary-btn py-3 w-full rounded text-white uppercase" />
-          </div>
+        <input
+        type="hidden"
+        name="return_to"
+        value="back" />
+        <input
+        type="submit"
+        value="Add to cart"
+        class="primary-btn py-3 w-full rounded text-white uppercase" />
+        </div>
         </form>
+        {% endcomment %}
+
 
         <form method="POST" action="/cart/add">
           <div style="width:300px">
@@ -115,7 +149,6 @@
       </div>
     {% endif %}
   </div>
-
 </div>
 
 {% schema %}
