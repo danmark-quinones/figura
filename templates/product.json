@@ -12,16 +12,16 @@
     "46649a4d-5b94-446e-8a32-acacd42885e6": {
       "type": "feature-product",
       "blocks": {
-        "8a4d661a-5fbc-4c1a-b704-58f580745d18": {
+        "78a78cc4-f831-4862-8067-0cbbb959074e": {
           "type": "collection",
           "settings": {
-            "featured_product": "demon-slayer",
+            "featured_product": "featured",
             "show_price": false
           }
         }
       },
       "block_order": [
-        "8a4d661a-5fbc-4c1a-b704-58f580745d18"
+        "78a78cc4-f831-4862-8067-0cbbb959074e"
       ],
       "settings": {
         "featured_header": "Try Also",
