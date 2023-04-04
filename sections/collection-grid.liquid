@@ -8,7 +8,7 @@
   {% if section.settings.collection_description != blank %}
     <p class="section-description">{{ section.settings.collection_description }}</p>
   {% endif %}
-  <div class="collection-list-container">
+  <div class="collection-list-container grid grid-cols-4 gap-4">
     {% for block in section.blocks %}
       {%- case block.type -%}
         {% when 'collection' %}

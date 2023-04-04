@@ -1,6 +1,6 @@
-<div class="p-5">
+<div class="p-5 collection-page-container">
   <p class="font-bold text-2xl mb-5">Our Collections</p>
-  <div>
+  <div class="collection-grid-container grid grid-cols-4 gap-4">
     {% for collection in collections %}
       {% render 'collection-card', collection: collection %}
     {% endfor %}
