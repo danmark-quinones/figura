@@ -43,5 +43,8 @@
         height: 100px;
         width: 100%;
     }
-    
+    .product-info-actions{
+        align-items: center !important;
+        justify-content: center;
+    }
 }
