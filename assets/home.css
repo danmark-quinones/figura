@@ -134,7 +134,10 @@
     }
 
     .collection-list-container{
-        display: block; 
+        display: block ; 
+    }
+    .card-collection-div{
+        margin-top: 10px;
     }
     .collection-card-img-container{
         height: 200px;

@@ -13,9 +13,9 @@ hr{
 
 .mobile-menu{
     background-color: #fff;
-    position: absolute;
+    position: fixed;
     overflow: hidden;
-    top: 0%;
+    top: 10%;
     right: 0%;
     width: 0%;
     height: 100vh;
