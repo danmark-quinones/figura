@@ -16,23 +16,15 @@
       crossorigin>
 
     {{ content_for_header }}
-    {{ 'main.css' | asset_url | stylesheet_tag }}
+    <script src="{{'bundle.js'|asset_url}}" defer="defer"></script>
+
     {{ 'application.css' | asset_url | stylesheet_tag }}
+    {{ 'main.css' | asset_url | stylesheet_tag }}
+    {{ 'navigation.css' | asset_url | stylesheet_tag }}
+    {{ 'cart.css' | asset_url | stylesheet_tag }}
+    {{ 'home.css' | asset_url | stylesheet_tag }}
+    {{ 'product.css' | asset_url | stylesheet_tag }}
 
-    <script src="{{'application.js'|asset_url}}" defer="defer"></script>
-    <script src="{{'cart-notification.js'|asset_url}}" defer="defer"></script>
-    <script
-      src="{{'cart.js'|asset_url}}"
-      defer="defer"
-      async></script>
-
-    <script type="application/json" data-ajax-cart-initial-state>
-      {{ cart | json }}
-    </script>
-
-    <script type="module">
-      import '{{ "liquid-ajax-cart-v1.10.3.js" | asset_url }}';
-    </script>
 
   </head>
 
